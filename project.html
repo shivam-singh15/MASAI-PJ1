@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        footer {
+            box-sizing: border-box;
+            
+            -webkit-text-size-adjust: 100%;
+            font-family: Assistant, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container{
+            padding: 80px 30px 0px 80px;
+            display: flex;
+        }
+
+        .lefty {
+            flex: 0 0 61%;
+            max-width: 61%;
+        }
+
+        .righty {
+            flex: 0 0 39%;
+            max-width: 380px;
+            padding-left: 30px;
+        }
+
+        h2:first-child,
+        h2:nth-of-type(5) {
+            margin-bottom: -10px;
+            margin-top: 30px;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-align: center;
+            color: #696b79;
+            font-size: 16px;
+        }
+
+        h2:nth-of-type(2),
+        h2:nth-of-type(3),
+        h2:nth-of-type(4),
+        h2:nth-of-type(6) {
+            text-align: justify;
+            line-height: 1.5;
+            color: #7e818c;
+            box-sizing: inherit;
+            margin-bottom: -10px;
+            margin-top: 30px;
+        }
+
+        p {
+            text-align: justify;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #7e818c;
+            margin-top: 20px;
+            box-sizing: inherit;
+        }
+
+        p:last-child {
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-top: 10px;
+        }
+
+        ul li strong {
+            font-size: 13px;
+            color: #696b79;
+        }
+
+        ul li div {
+            font-size: 14px;
+            color: #7e818c;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            box-sizing: inherit;
+            font-size: 12px; 
+            color: #535766;
+        }
+
+        th {
+            font-weight: 700;
+        }
+
+        p.last-updated {
+            color: #535766;
+            text-align: justify;
+            font-size: 12px;
+            box-sizing: inherit;
+            font-style: italic;
+            padding: 10px 0 0 6px;
+            font-weight: 700;
+        }
+        .newone {
+            padding: 0px 30px 0px 80px;
+            max-width: 57%;
+        }
+
+        .newone h2 {
+            text-align: justify;
+            line-height: 1.5;
+            color: #7e818c;
+            box-sizing: inherit;
+            margin-bottom: -10px;
+            margin-top: 30px;
+        }
+
+        .newone p {
+            text-align: justify;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #7e818c;
+            box-sizing: inherit;
+            margin-top: 20px;
+        }
+
+        .newone ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .newone ul li {
+            margin-top: 10px;
+        }
+
+        .newone ul li strong {
+            font-size: 13px;
+            color: #696b79;
+        }
+
+        .newone ul li div {
+            font-size: 14px;
+            color: #7e818c;
+            margin-top: 5px;
+        }
+        .myntatoday {
+            padding: 00px 30px 0px 80px;
+            max-width: 57%;
+
+        }
+
+        .myntatoday h2 {
+            text-align: justify;
+            line-height: 1.5;
+            color: #7e818c;
+            box-sizing: inherit;
+            margin-bottom: -10px;
+            margin-top: 30px;
+        }
+
+        .myntatoday p {
+            text-align: justify;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #7e818c;
+            box-sizing: inherit;
+            margin-top: 20px;
+        }
+        .faqsfaqs {
+        padding: 0px 30px 0px 80px;
+            max-width: 57%;
+        }
+        .faqsfaqs h2 {
+            text-align: justify;
+            line-height: 1.5;
+            color: #7e818c;
+            box-sizing: inherit;
+            margin-bottom: -10px;
+            margin-top: 30px;
+        }
+
+        .faqsfaqs h3 {
+            text-align: justify;
+            line-height: 1.5;
+            color: #7e818c;
+            box-sizing: inherit;
+            margin-bottom: -10px;
+            margin-top: 30px;
+        }
+
+        .faqsfaqs p {
+            text-align: justify;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #7e818c;
+            box-sizing: inherit;
+            margin-top: 20px;
+        }
+
+        .bot {
+    text-align: justify;
+    font-size: 14px;
+    color: #7e818c;
+    box-sizing: inherit;
+    margin-top: 0;
+        }
+
+        .mix {
+            padding: 0px 30px 0px 80px;
+            max-width: 57%;
+        }
+
+        .remaining {
+            padding: 0px 30px 0px 80px;
+            max-width: 59%;
+        }
+        .popular {
+            padding: 15px 30px 0px 80px;
+            max-width: 59%; 
+        }
+        .searches {
+            padding: 0px 30px 0px 80px;
+            max-width: 59%;
+            -webkit-text-size-adjust: 100%;
+            text-align: justify;
+            font-size: 15px;
+            line-height: 25px;
+            font-weight: 700;
+            color: #7e818c;
+        }
+        .triplet {
+            display: flex;
+            max-width: 57%;
+            padding: 30px 30px 0px 80px;
+        }
+        .duo {
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #696b79;
+        }
+        .trio {
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #94969f;
+    margin-left: 10%;
+    margin-right: 5%;
+        }
+        .final{
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: end;
+    font-weight: 700;
+    color: #7e818c;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+<footer>
+<div class="container">
+    <div class="lefty">
+        
+            <h2>BUY MAKEUP PRODUCTS</h2>
+            <h2>Look Selfie-Ready with Myntra’s Makeup Offerings</h2>
+            <p>Makeup has evolved beyond a dab of talc and lipstick; it is now an art used to create flawless and breathtaking looks. From methods such as contouring, baking, and airbrushing, the technology and skill have advanced to a great level.</p>
+            <p>And for you to create that perfect look, all you need to do is log on to Myntra. Our platform offers the finest makeup products from the world’s top brands at affordable rates. We tell you more about these items here.</p>
+            <h2>How to Choose The Right Makeup for Your Skin Type?</h2>
+            <p>It can be tough to find the perfect product for your skin that looks good at work and after hours. Fret not; here are some guidelines to make your online makeup purchases with ease.</p>
+            <ul>
+                <li><strong>IDENTIFY YOUR SKIN TYPE:</strong><div>Oily, dry, combination, and sensitive skin are the four main categories when it comes to your face. Understand your type and select makeup cosmetics that complement it. For instance, go for a matte foundation for oily skin and a creamy one for dry.</div>
+                </li>
+                <li><strong>UNDERSTAND THE SKIN SHADES:</strong><div>From milky fair to warm and cool undertones and even dusky skin, there are so many varieties of beautiful faces in our country. Hence, we offer products that suit almost all shades. Identify your shade and opt for nude or pop hues as per your choice.</div>
+                </li>
+                <li><strong>BE EVENT READY:</strong><div>Ensure that your makeup online shopping is versatile and ideal for most occasions. For instance, you can pick an eyeshadow palette with a mix-bag of shades for weddings as well as office parties. You can even buy tester kits on our platform.</div>
+                </li>
+                <li><strong>ADDRESS YOUR SKIN ISSUES:</strong><div>If you are prone to acne, look for products that are light and matte. Alternately, choose correcting and concealing shades for pigmented skin type. Plus, you can also look for items that are hypoallergenic and fragrance-free if you have sensitive skin. Ensure that you wash your makeup brushes often to avoid infections.</div>
+                </li>
+            </ul>
+
+    </div>
+
+    <div class="righty">
+        <h2>MAKEUP PRODUCTS PRICE LIST</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Makeup Products</th>
+                    <th>PRICE (RS)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>SWISS BEAUTY Precision Thickening Long Lash Mascara - Black</td>
+                    <td>Rs. 191</td>
+                </tr>
+                <tr>
+                    <td>FACES CANADA Weightless Stay Matte Compact SPF20 with Vitamin E & Shea Butter 9g - Natural 02</td>
+                    <td>Rs. 112</td>
+                </tr>
+                <tr>
+                    <td>ELLE 18 Liquid Lip Color - Nude Pump</td>
+                    <td>Rs. 108</td>
+                </tr>
+                <tr>
+                    <td>ELLE 18 Lasting Glow Compact - 2 Marble 9 g</td>
+                    <td>Rs. 93</td>
+                </tr>
+                <tr>
+                    <td>FACES CANADA Weightless Stay Matte Compact SPF20 with Vitamin E & Shea Butter 9g - Ivory 01</td>
+                    <td>Rs. 153</td>
+                </tr>
+                <tr>
+                    <td>Blue Heaven Jelly & Butter Hydrating Lip Balm with Shea Butter & Vitamin E - Dusty Rose</td>
+                    <td>Rs. 120</td>
+                </tr>
+                <tr>
+                    <td>SWISS BEAUTY Liquid Concealer - Sand Sable 02</td>
+                    <td>Rs. 204</td>
+                </tr>
+                <tr>
+                    <td>SWISS BEAUTY Clean & Glow Makeup Remover Wipes with Green Tea & Calendula - 30 Wipes</td>
+                    <td>Rs. 108</td>
+                </tr>
+                <tr>
+                    <td>Biotique Bio Fruit Whitening Sustainable Lip Balm 12 g</td>
+                    <td>Rs. 136</td>
+                </tr>
+                <tr>
+                    <td>SWISS BEAUTY Ultimate Eyeshadow Palette - Shade 2</td>
+                    <td>Rs. 250</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="last-updated">Data last updated on 19/01/2024</p>
+    </div>
+</div>
+<div class="newone">
+    <h2>Makeup Trends to Try this Year</h2>
+    <p>Here are a few of the most trending looks you can create to steal the show. Here we list a few.</p>
+
+    <ul>
+        <li>
+            <strong>BRIGHT, BOLD EYELINER:</strong>
+            <div>Think vivid greens, blues, and pinks! The secret is to keep the rest of your makeup understated and let the eyeliner shine. A colorful winged liner may be a fun and whimsical way to inject color into your beauty looks.</div>
+        </li>
+        <li>
+            <strong>GLOWY SKIN:</strong>
+            <div>Although glassy, radiant skin is always in vogue, this year it is even more popular due to Korean celebrities. Dewy foundations, highlighters, and illuminators are perfect to get the desired shine. To keep your makeup looking fresh and beautiful throughout the day, the key is to keep your skin moisturized and hydrated.</div>
+        </li>
+    </ul>
+</div>
+<div class="myntatoday">
+    <h2>Buy Stunning Makeup from Myntra Today</h2>
+    <p>The convenience of purchasing skincare and cosmetics has never been greater, with Myntra. Our affordable pricing, frequent deals, and quick, dependable delivery services are just what you need.</p>
+    <p>From makeup removers to serums and hair straighteners, you can browse through our wide range of products and make knowledgeable buying selections. Our no-hassle return policy also gives you the peace of mind to shop. Discover the ideal makeup items to accentuate your natural beauty by visiting Myntra today.</p>
+    <p>Here are a few of the most trending looks you can create to steal the show. Here we list a few.</p>
+</div>
+<div class="faqsfaqs">
+    <h2>FAQs</h2>
+    <h3><strong>WHICH MAKEUP COMBO BRAND IS THE BEST IN INDIA?</strong></h3>
+    <p>M.A.C, Bobbi Brown, and Inglot are a few top brands that offer the best makeup kits on our platform. For a more affordable option, you can try Lakmé, Sugar Cosmetics, and Faces Canada. These are also a few best sellers on our platform.</p>
+
+    <h3><strong>WHAT ARE MAKEUP COMBOS?</strong></h3>
+    <p>Makeup combos are collections of cosmetics that are offered as a bundle deal. Different items such as primer, foundation, and compact could be one set, or color-based options such as lip and cheek tint, eye shadows, and bold-hued eyeliners. You may even go for an eye-makeup combo which comprises liner, kajal, eyebrow pigment, shadow, mascara, and more. These sets are frequently packaged and can be more affordable than purchasing separate products.</p>
+
+    <h3><strong>HOW MUCH DOES A MAKEUP COMBO COST?</strong></h3>
+    <p>The average cost of a quality set ranges from ₹1,000 to ₹5,000. If you go for international brands and rich pigment, the cost tends to be higher, while home-grown options for daily use are pocket-friendly. But with Myntra, you can find all of these with massive deals and discounts so that you can get the best for less.</p>
+    
+    <div class="bot"> itemprop="video" itemscope itemtype="http://schema.org/VideoObject"></div>
+        
+        <br>
+        <h3 style="text-align: justify; line-height: 1.5; color: #7e818c; box-sizing: inherit; margin-bottom: -10px; margin-top: 30px;">VIDEO: Must-Try Makeup Trends of 2023</h3>
+        <br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/f_PN_lx2lng" title="Must-Try Makeup Trends of 2023 ft. @PrableenKaurBhomrah | What's Trending In Beauty World | Myntra" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="bot">Who doesn't like to be in sync with what's happening in the world of makeup? If you too are a makeup junkie, who loves to stay updated with the ongoing trends, then this video is for you!</div>
+</div>
+<div class="mix">
+    <table>
+        <thead>
+            <tr>
+                <th style= " text-align: justify;line-height: 1.5;color: #7e818c; font-size:12px;font-weight: 700;margin-top: 19px">ONLINE SHOPPING</th>
+                <th style= " text-align: justify;line-height: 1.5;color: #7e818c; font-size:12px;font-weight: 700;margin-top: 19px">CUSTOMER POLICIES</th>
+                <th style="text-align: justify; font-size: 12px; font-weight: 700; color: #282c3f; margin: -3px 0 0; padding: 0 0 25px; margin-top: 0;">EXPERIENCE MYNTRA APP ON MOBILE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="text-align: justify; box-sizing: inherit; font-size: 15px; padding-bottom: 5px; cursor: pointer; line-height: normal; font-weight: 700; color: #7e818c; padding-top: 14px;">
+                    <ul>
+                        <li>Men</li>
+                        <li>Women</li>
+                        <li>Kids</li>
+                        <li>Home & Living</li>
+                        <li>Beauty</li>
+                        <li>Gift Cards</li>
+                        <li>Myntra Insider</li>
+                    </ul>
+                </td>
+                <td style="text-align: justify; box-sizing: inherit; font-size: 15px; padding-bottom: 5px; cursor: pointer; line-height: normal; font-weight: 700; color: #7e818c; padding-top: 14px;">
+                    <ul>
+                        <li>Contact Us</li>
+                        <li>FAQ</li>
+                        <li>T&C</li>
+                        <li>Terms Of Use</li>
+                        <li>Track Orders</li>
+                        <li>Shipping</li>
+                        <li>Cancellation</li>
+                        <li>Returns</li>
+                        <li>Privacy policy</li>
+                        <li>Grievance Officer</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li style="text-align: justify; color: #7e818c; vertical-align: top; padding-right: 20px; width: 360px; font-size: 15px; line-height: 19px; float: left; padding-top: 13px;"><b>KEEP IN TOUCH</b></li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="remaining">
+    <table>
+        <thead>
+            <tr>
+                <th style="text-align: justify; line-height: 1.5; color: #7e818c; font-size: 12px; font-weight: 700; margin-top: 19px;">USEFUL LINKS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="text-align: justify; font-size: 15px; padding-bottom: 5px; cursor: pointer; line-height: normal; font-weight: 700; color: #7e818c; padding-top: 14px;">
+                <ul>
+                <li>Blog</li>
+                <li>Careers</li>
+                </li>Site Map</li>
+                <li>Corporate Information</li>
+                <li>Whitehat</li>
+                <li>Cleartrip</li>
+                </ul>
+            </td>
+    
+   
+    
+                <td style="text-align: justify; font-size: 14px; line-height: 1.5; color: #696b79; padding-bottom: 5px; cursor: pointer; font-weight: 700; padding-top: 14px;">
+                <ul>
+                <li>100% ORIGINAL guarantee for all products at myntra.com.</li>
+                <li>RETURN WITHIN 14 DAYS of receiving your order.</li>
+                </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+<div class="popular">
+<p style="
+text-align: justify;line-height: 1.5;color: #282c3f;font-size: 12px;font-weight: 700;">POPULAR SEARCHES</p>
+</div>
+<div class="searches">
+    Coconut Oil | Rose Water | Aloe Vera Gel | Hair Extensions | Nivea Cream | Garnier Hair Color | Diapers | Venus Razor | Burgundy Hair Color | Highlighting Hair Color | Brown Hair Color | Primers | Salt Epsom | Toothbrush | Tampon | Face Mask | Mi Trimmer | Menstrual Cup | Face Wash For Men | Condoms | Hair Removal Cream | Eye Makeup | Razor | Face Wash For Oily Skin | Lipstick | Sanitizer | Cosmetics | Pink Lipstick  Kajal | Hand Sanitizer | Skin Whitening Cream | Moisturizers | Bleach | Level Up | Indulekha Hair Oil | Baby Lips | Hair Styler | Onion Hair Oil | Hand Sanitiser | La Girl Pro Concealer | Oily Skin Face Wash | Khadi Shampoo | Skin Care | Soap | Himalaya Face Wash | Wow Face Wash | Dove Shampoo | Garnier Hair Colour | Lakme Cc Cream | Vitamin C Face Serum
+</div>
+<div class="triplet">
+<div class="duo">
+    <p>In case of any concern, <b>Contact Us</b></p>
+</div>
+<div class="trio">
+    <p>© 2024 www.myntra.com. All rights reserved.</p>
+</div>
+<div class="final">
+    <p>A Flipkart company</p>
+</div>
+</div>
+</footer>
+</html>
